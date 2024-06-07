@@ -53,19 +53,20 @@ export class ArianrhodItem extends Item {
     const item = this;
 
     // Initialize chat data.
-    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+    const speaker = ChatMessage.getSpeaker({actor: this.actor});
     const rollMode = game.settings.get('core', 'rollMode');
-    const label = `[${item.type}] ${item.name}`;
 
-    const content = `<div class="arianrhod-item-effect">${item.system.effects.value}</div><div class="arianrhod-item-description">${item.system.description.value}</div>"`;
+    const level = item.system.attributes?.currentSL;
+    const lv = level ? `<span class="arianrhod-item-level">${level}</span>` : "";
+    const title = `<h2 class="arianrhod-item-title">${item.name + lv}</h2>`;
+    const content = `<div class="arianrhod-item-effect">${item.system.effects.value}</div><div class="arianrhod-item-description">${item.system.description.value}</div>`;
 
     // If there's no roll data, send a chat message.
     if (!this.system.formula) {
       ChatMessage.create({
         speaker: speaker,
         rollMode: rollMode,
-        flavor: label,
-        content: content,
+        content: title + content,
       });
     }
     // Otherwise, create a roll and send a chat message from it.

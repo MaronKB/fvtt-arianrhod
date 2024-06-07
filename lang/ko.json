@@ -38,7 +38,8 @@
       "Target": "대상",
       "Range": "사거리",
       "Cost": "코스트",
-      "MaxSL": "SL상한",
+      "CurrentSL": "현재 스킬 레벨",
+      "MaxSL": "스킬 레벨 상한",
       "Req": "사용 조건",
       "Weight": "중량",
       "Position": "장비 부위"

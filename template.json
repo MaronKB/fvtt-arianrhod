@@ -415,6 +415,9 @@
         "cost": {
           "value": ""
         },
+        "currentSL": {
+          "value": ""
+        },
         "maxSL": {
           "value": ""
         },
