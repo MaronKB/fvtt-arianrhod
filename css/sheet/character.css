@@ -1,0 +1,527 @@
+
+input[type="text"].charname {
+    flex: 1;
+    width: 100%;
+    height: 40px;
+    font-size: 28px;
+    padding: 0 8px;
+    margin: 0;
+}
+input[type="text"].level {
+    flex: none;
+    width: 50px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+}
+.sheet-title > label {
+    flex: none;
+    width: 50px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    background: white;
+    border: 1px solid #777777;
+    border-radius: 2px;
+    margin: -10px -30px 0 0;
+    z-index: 1;
+}
+.sheet-classes {
+    flex: none;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.class {
+    position: relative;
+    flex: 1;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #777777;
+    border-radius: 6px;
+}
+.class > label {
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+.class > h4 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin: 0;
+}
+.class .item-tools {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 19px;
+    height: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.class .item-tools > a {
+    flex: none;
+    width: 19px;
+    height: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.sheet-attributes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.sheet-attribute {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.sheet-gauge {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: calc(100% - 48px);
+    height: 10px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+    margin: 0 12px 0 36px;
+    overflow: hidden;
+    -webkit-appearance: none;
+}
+.sheet-gauge::-webkit-progress-bar {
+    background: #777777;
+}
+.sheet-gauge::-webkit-progress-value {
+    background: white;
+}
+/*
+.sheet-hp .sheet-gauge::-webkit-progress-value {
+  background: palegreen;
+}
+.sheet-mp .sheet-gauge::-webkit-progress-value {
+  background: lightskyblue;
+}
+*/
+.sheet-attribute > label {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 1px solid #777777;
+    border-radius: 2px;
+    margin: 0 0 -12px 0;
+    transform: rotate(45deg);
+    overflow: hidden;
+    z-index: 1;
+}
+.sheet-attribute > label > span {
+    transform: rotate(-45deg);
+}
+.sheet-point {
+    width: calc(100% - 12px);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid #777777;
+    border-radius: 2px 15px;
+    margin: 0 0 0 12px;
+}
+.sheet-point > span {
+    flex: none;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sheet-point > input[type="text"],
+.sheet-point > span:last-child {
+    flex: 1;
+    height: 100%;
+    min-height: unset;
+    font-size: 16px;
+    text-align: center;
+    border: 0;
+}
+.sheet-fate {
+    flex: 1;
+}
+.sheet-fate > label {
+    font-size: 12px;
+    line-height: 75%;
+}
+.sheet-fate > input[type="text"] {
+    width: 42px;
+    height: 100%;
+    border: 1px solid #777777;
+    border-radius: 2px 15px;
+}
+
+
+.sheet-body {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+}
+.sheet-sidebar {
+    flex: none;
+    width: 160px;
+}
+.abilities {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+.ability {
+    width: 140px;
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.ability-numbers {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.ability-numbers > * {
+    flex: 1;
+}
+.ability-numbers > div {
+    gap: 2px;
+}
+.ability-title {
+    flex: none;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    background: white;
+    border: 1px solid #777777;
+    border-radius: 2px;
+    margin: -40px -30px 0 0;
+    z-index: 1;
+}
+.ability-base {
+    flex: none;
+    width: 80px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(105deg, white 50%, rgba(0, 0, 0, 0.05) 50%);
+    border: 1px solid #777777;
+    border-radius: 2px;
+}
+.ability-base > div {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+.ability-base > span {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background: white;
+    border-radius: 50%;
+    margin: 0 -5px;
+}
+.ability-base > input {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    background: none;
+    padding: 0;
+    border: 0;
+}
+.ability-base > input:focus {
+    box-shadow: none;
+}
+.ability-modifiers {
+    flex: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2px;
+    margin: 0 0 0 -5px;
+}
+.ability-mod {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background: white;
+    border: 1px solid #777777;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+.ability-mod > span,
+.ability-mod > input[type="text"] {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    transform: rotate(-45deg);
+}
+.ability-mod > input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+}
+.ability-total {
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
+.ability-total > span {
+    font-size: 24px;
+}
+.ability-etc {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    background: none;
+    align-self: end;
+}
+.ability-etc > input[type="text"] {
+}
+.sheet-section {
+    flex: 1;
+}
+.sheet-section .tab {
+}
+.combat-features {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.combat-rolls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.combat-roll {
+    flex: 1;
+    background: white;
+    padding: 4px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+}
+.combat-roll > div {
+    display: flex;
+    justify-content: center;
+}
+.combat-roll > div > i {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+.combat-roll > div > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.combat-roll > hr {
+    width: 75%;
+    margin: 4px auto;
+}
+.combat-roll > h5 {
+    text-align: center;
+    margin: 0;
+}
+.combat-attributes {
+    display: flex;
+    gap: 5px;
+}
+.combat-attribute {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    background: white;
+    border: 1px solid #777777;
+    border-radius: 2px;
+}
+.combat-attribute > i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.combat-attribute > h5 {
+    flex: 1;
+    white-space: nowrap;
+    margin: 0;
+}
+.combat-attribute > span {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background: #dddddd;
+}
+
+
+.combat-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+.combat-actions > .combat-roll {
+    border-radius: 2px;
+}
+.combat-actions > .combat-roll > div > i {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+}
+.combat-actions > .combat-roll > div > span {
+    font-size: 16px;
+}
+.combat-actions > .combat-roll > hr {
+    margin: 2px auto;
+}
+.combat-actions > .combat-roll > h5 {
+    font-size: 10px;
+}
+
+.items {
+    padding: 4px;
+}
+.items-header {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 1px solid #777777;
+    border-radius: 2px;
+    margin: 2px 0;
+}
+.items-header > h4 {
+    flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+.items-header > a {
+    flex: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.items-list > .item {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: white;
+    border: 1px solid #777777;
+    border-radius: 2px;
+    margin: 2px 0;
+}
+.items-list > .item > a {
+    flex: none;
+    width: 24px;
+    height: 100%;
+    background: #dddddd;
+    border-radius: 5px;
+}
+.items-list > .item > a > img {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}
+.items-list > .item > h4 {
+    flex: 1;
+    margin: 0;
+}
+.items-list > .item > div {
+    flex: none;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #dddddd;
+}
+.items-list > .item > div > a {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

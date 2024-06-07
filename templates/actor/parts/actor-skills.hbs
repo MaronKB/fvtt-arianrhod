@@ -1,0 +1,36 @@
+{{#each skills as |skills key|}}
+	<div class="items">
+        <div class='items-header'>
+            <h4 class='item-name'>{{key}} {{localize "ARIANRHOD.Skills"}}</h4>
+            <a class='item-control item-create'
+               title='{{localize "DOCUMENT.Create" type='Skill'}}'
+               data-type='skill'
+               data-class={{key}}
+            ><i class='fas fa-plus'></i></a>
+        </div>
+        <ol class='items-list'>
+            {{#each skills as |item id|}}
+                <li class='item flexrow' data-item-id='{{item._id}}'>
+                    <a class='rollable' data-roll-type='item'><img
+                     src='{{item.img}}'
+                     title='{{item.name}}'
+                    /></a>
+                    <h4>{{item.name}}</h4>
+                    <div class='item-controls'>
+                        <a
+                        class='item-control item-edit'
+                        title='{{localize "DOCUMENT.Edit" type='spell'}}'
+                        >
+                            <i class='fas fa-edit'></i>
+                        </a>
+                        <a class='item-control item-delete'
+                         title='{{localize "DOCUMENT.Delete" type='spell'}}'
+                        >
+                            <i class='fas fa-trash'></i>
+                        </a>
+                    </div>
+                </li>
+            {{/each}}
+        </ol>
+	</div>
+{{/each}}

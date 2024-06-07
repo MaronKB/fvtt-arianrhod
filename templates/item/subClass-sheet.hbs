@@ -1,0 +1,41 @@
+<form class="{{cssClass}} arianrhod-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+        <div class="header-fields">
+            <h2 class="headline">{{localize "ARIANRHOD.Class.SupportClass"}}</h2>
+            <div class="sheet-title">
+                <label for="name">{{localize "ARIANRHOD.Name"}}</label>
+                <input class="charname" name="name" type="text" value="{{item.name}}" placeholder="Name"/>
+            </div>
+            <div class="item-attributes">
+                <div class="item-attribute">
+                    <label>초기 HP</label>
+                    <input type="text" name="system.attributes.baseHP.value" value="{{system.attributes.baseHP.value}}" data-dtype="Number"/>
+                </div>
+                <div class="item-attribute">
+                    <label>초기 MP</label>
+                    <input type="text" name="system.attributes.baseMP.value" value="{{system.attributes.baseMP.value}}" data-dtype="Number"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <div class="item-abilities">
+            {{#each system.abilities as |ability key|}}
+                <div class="item-ability">
+                    <label class="ability-title" for="system.abilities.{{key}}.value"
+                           data-label="{{ability.label}}">{{ability.label}}</label>
+                    <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}"
+                           data-type="Number"/>
+                </div>
+            {{/each}}
+        </div>
+        <div class="item-description">
+            {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+        </div>
+    </section>
+</form>
+
+{{log system}}

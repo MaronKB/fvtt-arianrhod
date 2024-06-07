@@ -1,0 +1,50 @@
+{
+  "id": "arianrhod",
+  "title": "Arianrhod",
+  "description": "아리안로드",
+  "authors": [
+    {
+      "name": "MRKB",
+      "discord": "mrkb"
+    }
+  ],
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/arianrhod/assets/title.jpg",
+      "thumbnail": "systems/arianrhod/assets/title.jpg"
+    }
+  ],
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": 11,
+    "verified": "11.315"
+  },
+  "esmodules": ["module/main.mjs"],
+  "styles": ["css/main.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "ko",
+      "name": "한국어",
+      "path": "lang/ko.json"
+    }
+  ],
+  "packs": [],
+  "packFolders": [],
+  "socket": false,
+  "url": "https://github.com/MaronKB/arianrhod",
+  "manifest": "https://raw.githubusercontent.com/MaronKB/arianrhod/main/system.json",
+  "download": "https://github.com/MaronKB/arianrhod/archive/main.zip",
+  "background": "systems/arianrhod/assets/title.jpg",
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": "mp"
+}

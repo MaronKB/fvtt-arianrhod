@@ -1,0 +1,86 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="skill-abilities">
+        <header class="skill-header">
+            <h2 class="headline">{{localize "ARIANRHOD.Skills"}}</h2>
+            <div>
+                <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+                <input name="name" type="text" value="{{item.name}}" placeholder="Name"/>
+            </div>
+        </header>
+        {{#each system.abilities as |ability key|}}
+            <div class="skill-ability">
+                <label class="skill-ability-title" for="system.abilities.{{key}}.value"
+                       data-label="{{ability.label}}">{{ability.label}}</label>
+                <div class="skill-ability-numbers">
+                    <div class="skill-ability-base">
+                        <h4 class="skill-ability-base-title">기본치</h4>
+                        <input type="text" name="system.abilities.{{key}}.base" value="{{ability.base}}"
+                               data-type="Number"/>
+                    </div>
+                    <div class="skill-ability-mod">
+                        <h4 class="skill-ability-mod-title">수정치</h4>
+                        <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}"
+                               data-type="Number"/>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="skill-attrs">
+        {{#each system.attributes as |attr key|}}
+            {{#unless attr.isTextarea}}
+                <div class="skill-attr">
+                        <label class="skill-combat-title" for="system.attributes.{{key}}.value"
+                               data-label="{{attr.label}}">{{attr.label}}</label>
+                        <input type="text" name="system.attributes.{{key}}.value" value="{{attr.value}}"
+                               data-type="Number"/>
+                </div>
+            {{/unless}}
+        {{/each}}
+        <div class="skill-attr">
+            <label class="skill-combat-title" for="system.effects.value"
+                   data-label="{{system.effects.label}}">{{system.effects.label}}</label>
+            <div class="skill-combat-edit">
+                {{editor system.effects.value target="system.effects.value" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+        <div class="skill-attr">
+            <label class="skill-combat-title" for="system.description.value"
+                   data-label="{{system.description.label}}">{{system.description.label}}</label>
+            <div class="skill-combat-edit">
+                {{editor system.attributes.description.value target="system.attributes.description.value" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+    </div>
+    <div class="skill-attributes">
+        <h4 class="skill-attributes-header"><span>이름</span><span>다이스</span><span>수정치</span></h4>
+        <h4 class="skill-attributes-header"><span>이름</span><span>다이스</span><span>수정치</span></h4>
+        {{#each system.combatant as |combat key|}}
+            <div class="skill-attribute">
+                <label class="skill-combat-title" for="system.combatant.{{key}}.value"
+                       data-label="{{combat.label}}">{{combat.label}}</label>
+                <input type="text"
+                       data-type="Number"
+            {{#unless combat.numberOnly}}
+                       name="system.combatant.{{key}}.dice"
+                       value="{{combat.dice}}"
+            {{else}}
+                       disabled
+            {{/unless}}
+                       />
+                <input type="text" name="system.combatant.{{key}}.mod" value="{{combat.mod}}"
+                       data-type="Number"/>
+            </div>
+        {{/each}}
+        {{#each system.actions as |action key|}}
+            <div class="skill-attribute">
+                <label class="skill-action-title" for="system.actions.{{key}}.value"
+                       data-label="{{action.label}}">{{action.label}}</label>
+                <input type="text" name="system.actions.{{key}}.dice" value="{{action.dice}}"
+                       data-type="Number"/>
+                <input type="text" name="system.actions.{{key}}.mod" value="{{action.mod}}"
+                       data-type="Number"/>
+            </div>
+        {{/each}}
+    </div>
+</form>

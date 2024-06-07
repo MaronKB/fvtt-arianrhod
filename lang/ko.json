@@ -1,0 +1,72 @@
+{
+  "ARIANRHOD" : {
+    "Ability" : {
+      "Str": "근력",
+      "Dex": "재주",
+      "Agi": "민첩",
+      "Int": "지력",
+      "Per": "감지",
+      "Mnd": "정신",
+      "Luk": "행운",
+      "base": "기본치",
+      "bonus": "보너스",
+      "mod": "수정치",
+      "etc": "기타",
+      "total": "능력치"
+    },
+    "Actions" : {
+      "Trap" : "트랩 탐지",
+      "Danger" : "위험 감지",
+      "Clear" : "트랩 해제",
+      "Enemy" : "에너미 식별",
+      "Jump" : "도약",
+      "Climbing" : "등반",
+      "Interrogation" : "정보 수집",
+      "Negotiation" : "교섭",
+      "Appraise" : "아이템 감정",
+      "Magic" : "마술 판정",
+      "Sing" : "주가 판정",
+      "Alchemy" : "연금술 판정"
+    },
+    "Attributes" : {
+      "Class": "클래스",
+      "ClassLimit": "클래스 제한",
+      "Level": "레벨",
+      "Type": "종별",
+      "Timing": "타이밍",
+      "Check": "판정",
+      "Target": "대상",
+      "Range": "사거리",
+      "Cost": "코스트",
+      "MaxSL": "SL상한",
+      "Req": "사용 조건",
+      "Weight": "중량",
+      "Position": "장비 부위"
+    },
+    "Combatant" : {
+      "HitCheck" : "명중 판정",
+      "AttackPower" : "공격력",
+      "DodgeCheck" : "회피 판정",
+      "PhysicalDefence" : "물리 방어",
+      "MagicDefence" : "마법 방어",
+      "ActionPoints" : "행동치",
+      "Movement" : "이동력"
+    },
+    "Class" : {
+      "Class" : "클래스",
+      "MainClass" : "메인 클래스",
+      "SupportClass" : "서포트 클래스",
+      "Race" : "종족"
+    },
+    "Effects" : "효과",
+    "Equipment" : "장비",
+    "Equipments" : "장비",
+    "Description" : "설명",
+    "Fate" : "페이트",
+    "Features" : "기능",
+    "Name" : "이름",
+    "Skills" : "스킬",
+    "Level" : "레벨",
+    "Uncategorized" : "미분류"
+  }
+}

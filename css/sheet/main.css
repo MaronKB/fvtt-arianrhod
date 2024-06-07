@@ -1,0 +1,31 @@
+@import "character.css";
+@import "item.css";
+
+.arianrhod-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.arianrhod-sheet * {
+  box-sizing: border-box;
+}
+.arianrhod-sheet .sheet-header {
+  flex: none;
+  display: flex;
+  gap: 10px;
+}
+.arianrhod-sheet .sheet-header .profile-img {
+  flex: none;
+  width: 100px;
+  height: 160px;
+}
+.header-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sheet-title {
+  display: flex;
+  gap: 5px;
+  padding: 10px 0 0 0;
+}

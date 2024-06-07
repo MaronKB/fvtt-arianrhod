@@ -1,0 +1,40 @@
+<section class="combat-features">
+    <div class="combat-rolls">
+        <div class="combat-roll rollable" data-roll="{{system.combatant.attackPower.formula}}" data-label="{{localize "ARIANRHOD.Combatant.HitCheck"}}">
+            <div>
+                <i class="fa-solid fa-bullseye-arrow"></i>
+                <span>{{system.combatant.hitCheck.formula}}</span>
+            </div>
+            <hr/>
+            <h5>{{localize "ARIANRHOD.Combatant.HitCheck"}}</h5>
+        </div>
+        <div class="combat-roll rollable" data-roll="{{system.combatant.attackPower.formula}}" data-label="{{localize "ARIANRHOD.Combatant.AttackPower"}}">
+            <div>
+                <i class="fa-solid fa-claw-marks"></i>
+                <span>{{system.combatant.attackPower.formula}}</span>
+            </div>
+            <hr/>
+            <h5>{{localize "ARIANRHOD.Combatant.AttackPower"}}</h5>
+        </div>
+        <div class="combat-roll rollable" data-roll="{{system.combatant.dodgeCheck.formula}}" data-label="{{localize "ARIANRHOD.Combatant.DodgeCheck"}}">
+            <div>
+                <i class="fa-solid fa-person-running-fast"></i>
+                <span>{{system.combatant.dodgeCheck.formula}}</span>
+            </div>
+            <hr/>
+            <h5>{{localize "ARIANRHOD.Combatant.DodgeCheck"}}</h5>
+        </div>
+    </div>
+    <div class="combat-actions">
+        {{#each system.actions as |action key|}}
+            <div class="combat-roll rollable" data-roll="{{action.formula}}" data-label="{{action.label}}">
+                <div>
+                    <i class="fa-solid fa-{{action.icon}}"></i>
+                    <span>{{action.formula}}</span>
+                </div>
+                <hr/>
+                <h5>{{action.label}}</h5>
+            </div>
+        {{/each}}
+    </div>
+</section>

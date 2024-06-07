@@ -1,0 +1,458 @@
+{
+  "Actor": {
+    "types": ["character"],
+    "templates": {
+      "base": {
+        "attributes": {
+          "HP": {
+            "type": "Number",
+            "value": 10,
+            "min": 0,
+            "max": 10
+          },
+          "MP": {
+            "type": "Number",
+            "value": 0,
+            "min": 0,
+            "max": 10
+          },
+          "fate": {
+            "type": "Number",
+            "value": 6,
+            "min": 0,
+            "max": 6
+          }
+        },
+        "description": {
+          "background": "",
+          "guild": "",
+          "money": 0
+        }
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "attributes": {
+        "level": {
+          "value": 1
+        }
+      },
+      "abilities": {
+        "str": {
+          "type": "Number",
+          "base": 0,
+          "point": 0,
+          "value": 0,
+          "mod": 0,
+          "etc": 0
+        },
+        "dex": {
+          "type": "Number",
+          "base": 0,
+          "point": 0,
+          "value": 0,
+          "mod": 0,
+          "etc": 0
+        },
+        "agi": {
+          "type": "Number",
+          "base": 0,
+          "point": 0,
+          "value": 0,
+          "mod": 0,
+          "etc": 0
+        },
+        "int": {
+          "type": "Number",
+          "base": 0,
+          "point": 0,
+          "value": 0,
+          "mod": 0,
+          "etc": 0
+        },
+        "per": {
+          "type": "Number",
+          "base": 0,
+          "point": 0,
+          "value": 0,
+          "mod": 0,
+          "etc": 0
+        },
+        "mnd": {
+          "type": "Number",
+          "base": 0,
+          "point": 0,
+          "value": 0,
+          "mod": 0,
+          "etc": 0
+        },
+        "luk": {
+          "type": "Number",
+          "base": 0,
+          "point": 0,
+          "value": 0,
+          "mod": 0,
+          "etc": 0
+        }
+      },
+      "combatant": {
+        "hitCheck": {
+          "key": "dex",
+          "dice": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "attackPower": {
+          "key": "",
+          "dice": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "dodgeCheck": {
+          "key": "agi",
+          "dice": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "physicalDefence": {
+          "key": "",
+          "dice": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "magicDefence": {
+          "key": "mnd",
+          "dice": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "actionPoints": {
+          "key": "agi",
+          "dice": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "movement": {
+          "key": "str",
+          "dice": 0,
+          "value": 0,
+          "mod": 0
+        }
+      },
+      "actions": {
+        "trap": {
+          "key": "per",
+          "icon": "treasure-chest",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "danger": {
+          "key": "per",
+          "icon": "triangle-exclamation",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "clear": {
+          "key": "dex",
+          "icon": "puzzle-piece-simple",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "enemy": {
+          "key": "int",
+          "icon": "skull",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "jump": {
+          "key": "str",
+          "icon": "person-ski-jumping",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "climbing": {
+          "key": "str",
+          "icon": "up-to-line",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "interrogation": {
+          "key": "per",
+          "icon": "print-magnifying-glass",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "negotiation": {
+          "key": "mnd",
+          "icon": "person-military-to-person",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "appraise": {
+          "key": "int",
+          "icon": "magnifying-glass",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "magic": {
+          "key": "int",
+          "icon": "wand-magic-sparkles",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "sing": {
+          "key": "mnd",
+          "icon": "violin",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        },
+        "alchemy": {
+          "key": "dex",
+          "icon": "flask",
+          "dice": 0,
+          "mod": 0,
+          "value": 0
+        }
+      },
+      "lifepath": {
+        "origin": "",
+        "circumstance": "",
+        "goal": ""
+      }
+    }
+  },
+  "Item": {
+    "types": ["mainClass", "subClass", "race", "skill","equipment", "belongings"],
+    "templates": {
+      "class": {
+        "abilities": {
+          "str": {
+            "type": "Number",
+            "base": 0,
+            "value": 0
+          },
+          "dex": {
+            "type": "Number",
+            "base": 0,
+            "value": 0
+          },
+          "agi": {
+            "type": "Number",
+            "base": 0,
+            "value": 0
+          },
+          "int": {
+            "type": "Number",
+            "base": 0,
+            "value": 0
+          },
+          "per": {
+            "type": "Number",
+            "base": 0,
+            "value": 0
+          },
+          "mnd": {
+            "type": "Number",
+            "base": 0,
+            "value": 0
+          },
+          "luk": {
+            "type": "Number",
+            "base": 0,
+            "value": 0
+          }
+        }
+      },
+      "item": {
+        "effects": {
+          "value": ""
+        },
+        "description": {
+          "value": ""
+        },
+        "combatant": {
+          "hitCheck": {
+            "dice": 0,
+            "mod": 0
+          },
+          "attackPower": {
+            "dice": 0,
+            "mod": 0
+          },
+          "dodgeCheck": {
+            "dice": 0,
+            "mod": 0
+          },
+          "physicalDefence": {
+            "numberOnly": true,
+            "mod": 0
+          },
+          "magicDefence": {
+            "numberOnly": true,
+            "mod": 0
+          },
+          "actionPoints": {
+            "numberOnly": true,
+            "mod": 0
+          },
+          "movement": {
+            "numberOnly": true,
+            "mod": 0
+          }
+        },
+        "actions": {
+          "trap": {
+            "dice": 0,
+            "mod": 0
+          },
+          "danger": {
+            "dice": 0,
+            "mod": 0
+          },
+          "clear": {
+            "dice": 0,
+            "mod": 0
+          },
+          "enemy": {
+            "dice": 0,
+            "mod": 0
+          },
+          "jump": {
+            "dice": 0,
+            "mod": 0
+          },
+          "climbing": {
+            "dice": 0,
+            "mod": 0
+          },
+          "interrogation": {
+            "dice": 0,
+            "mod": 0
+          },
+          "negotiation": {
+            "dice": 0,
+            "mod": 0
+          },
+          "appraise": {
+            "dice": 0,
+            "mod": 0
+          },
+          "magic": {
+            "dice": 0,
+            "mod": 0
+          },
+          "sing": {
+            "dice": 0,
+            "mod": 0
+          },
+          "alchemy": {
+            "dice": 0,
+            "mod": 0
+          }
+        }
+      }
+    },
+    "mainClass": {
+      "templates": ["class"],
+      "attributes": {
+        "baseHP": {
+          "value": 10
+        },
+        "baseMP": {
+          "value": 10
+        },
+        "riseHP": {
+          "value": 5
+        },
+        "riseMP": {
+          "value": 5
+        }
+      }
+    },
+    "subClass": {
+      "templates": ["class"],
+      "attributes": {
+        "baseHP": {
+          "value": 10
+        },
+        "baseMP":{
+          "value": 10
+        }
+      }
+    },
+    "race": {
+      "templates": ["class"]
+    },
+    "skill": {
+      "templates": ["class", "item"],
+      "attributes": {
+        "class": {
+          "value": ""
+        },
+        "timing": {
+          "value": ""
+        },
+        "check": {
+          "value": ""
+        },
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "cost": {
+          "value": ""
+        },
+        "maxSL": {
+          "value": ""
+        },
+        "req": {
+          "value": ""
+        }
+      }
+    },
+    "equipment": {
+      "templates": ["class", "item"],
+      "attributes": {
+        "type": {
+          "value": ""
+        },
+        "level": {
+          "value": 0
+        },
+        "classLimit": {
+          "value": ""
+        },
+        "weight": {
+          "value": 0
+        },
+        "range": {
+          "value": ""
+        },
+        "position": {
+          "value": ""
+        }
+      }
+    },
+    "belongings": {
+      "templates": [
+        "item"
+      ],
+      "weight": {
+        "value": 0
+      }
+    }
+  }
+}
