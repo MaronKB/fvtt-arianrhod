@@ -56,8 +56,8 @@ export class ArianrhodItem extends Item {
     const speaker = ChatMessage.getSpeaker({actor: this.actor});
     const rollMode = game.settings.get('core', 'rollMode');
 
-    const level = item.system.attributes?.currentSL;
-    const lv = level ? `<span class="arianrhod-item-level">${level}</span>` : "";
+    const level = item.system.attributes?.currentSL.value;
+    const lv = level ? `<span class="arianrhod-item-level">(Lv.${level})</span>` : "";
     const title = `<h2 class="arianrhod-item-title">${item.name + lv}</h2>`;
     const content = `<div class="arianrhod-item-effect">${item.system.effects.value}</div><div class="arianrhod-item-description">${item.system.description.value}</div>`;
 
