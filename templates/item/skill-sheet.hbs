@@ -1,12 +1,20 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <div class="skill-abilities">
-        <header class="skill-header">
-            <h2 class="headline">{{localize "ARIANRHOD.Skills"}}</h2>
-            <div>
-                <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
-                <input name="name" type="text" value="{{item.name}}" placeholder="Name"/>
+    <h2 class="headline">{{localize "ARIANRHOD.Skills"}}</h2>
+    <div class="skill-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <input name="name" type="text" value="{{item.name}}" placeholder="Name"/>
+        <div class="skill-levels">
+            <h4 class="skill-level-title">{{localize "ARIANRHOD.Attributes.CurrentSL"}}</h4>
+            <div class="skill-level">
+                <input type="text" name="system.attributes.currentSL.value" value="{{system.attributes.currentSL.value}}"
+                       data-type="Number"/>
+                <span>/</span>
+                <input type="text" name="system.attributes.maxSL.value" value="{{system.attributes.maxSL.value}}"
+                       data-type="Number"/>
             </div>
-        </header>
+        </div>
+    </div>
+    <div class="skill-abilities">
         {{#each system.abilities as |ability key|}}
             <div class="skill-ability">
                 <label class="skill-ability-title" for="system.abilities.{{key}}.value"
@@ -29,12 +37,14 @@
     <div class="skill-attrs">
         {{#each system.attributes as |attr key|}}
             {{#unless attr.isTextarea}}
+                {{#unless attr.isSL}}
                 <div class="skill-attr">
                         <label class="skill-combat-title" for="system.attributes.{{key}}.value"
                                data-label="{{attr.label}}">{{attr.label}}</label>
                         <input type="text" name="system.attributes.{{key}}.value" value="{{attr.value}}"
                                data-type="Number"/>
                 </div>
+                {{/unless}}
             {{/unless}}
         {{/each}}
         <div class="skill-attr">

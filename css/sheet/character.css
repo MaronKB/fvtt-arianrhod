@@ -23,7 +23,7 @@ input[type="text"].level {
     align-items: center;
     font-size: 13px;
     font-weight: bold;
-    background: white;
+    background: var(--section-background);
     border: 1px solid #777777;
     border-radius: 2px;
     margin: -10px -30px 0 0;
@@ -31,7 +31,7 @@ input[type="text"].level {
 }
 .sheet-classes {
     flex: none;
-    height: 40px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,18 +40,19 @@ input[type="text"].level {
 .class {
     position: relative;
     flex: 1;
-    height: 40px;
+    height: 48px;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--section-background);
     border: 1px solid #777777;
     border-radius: 6px;
 }
 .class > label {
     flex: none;
+    height: 18px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     font-size: 10px;
 }
 .class > h4 {
@@ -67,7 +68,7 @@ input[type="text"].level {
     right: 0;
     top: 0;
     width: 19px;
-    height: 38px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -75,7 +76,7 @@ input[type="text"].level {
 .class .item-tools > a {
     flex: none;
     width: 19px;
-    height: 19px;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,7 +128,7 @@ input[type="text"].level {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: var(--section-background);
     border: 1px solid #777777;
     border-radius: 2px;
     margin: 0 0 -12px 0;
@@ -228,7 +229,7 @@ input[type="text"].level {
     align-items: center;
     font-size: 12px;
     font-weight: bold;
-    background: white;
+    background: var(--section-background);
     border: 1px solid #777777;
     border-radius: 2px;
     margin: -40px -30px 0 0;
@@ -241,7 +242,7 @@ input[type="text"].level {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(105deg, white 50%, rgba(0, 0, 0, 0.05) 50%);
+    background: linear-gradient(105deg, var(--section-background) 50%, rgba(0, 0, 0, 0.05) 50%);
     border: 1px solid #777777;
     border-radius: 2px;
 }
@@ -261,7 +262,7 @@ input[type="text"].level {
     justify-content: center;
     align-items: center;
     font-size: 12px;
-    background: white;
+    background: var(--section-background);
     border-radius: 50%;
     margin: 0 -5px;
 }
@@ -296,7 +297,7 @@ input[type="text"].level {
     flex-direction: column;
     align-items: center;
     gap: 2px;
-    background: white;
+    background: var(--section-background);
     border: 1px solid #777777;
     border-radius: 2px;
     transform: rotate(45deg);
@@ -356,7 +357,7 @@ input[type="text"].level {
 }
 .combat-roll {
     flex: 1;
-    background: white;
+    background: var(--section-background);
     padding: 4px;
     border: 1px solid #777777;
     border-radius: 5px;
@@ -364,6 +365,7 @@ input[type="text"].level {
 .combat-roll > div {
     display: flex;
     justify-content: center;
+    gap: 3px;
 }
 .combat-roll > div > i {
     flex: none;
@@ -399,9 +401,10 @@ input[type="text"].level {
     align-items: center;
     gap: 5px;
     font-size: 14px;
-    background: white;
+    background: var(--section-background);
     border: 1px solid #777777;
     border-radius: 2px;
+    overflow: hidden;
 }
 .combat-attribute > i {
     width: 24px;
@@ -422,6 +425,8 @@ input[type="text"].level {
     justify-content: center;
     align-items: center;
     font-size: 18px;
+    font-weight: bold;
+    color: black;
     background: #dddddd;
 }
 
@@ -458,12 +463,12 @@ input[type="text"].level {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: var(--section-background);
     border: 1px solid #777777;
     border-radius: 2px;
     margin: 2px 0;
 }
-.items-header > h4 {
+.items-header > .item-name {
     flex: 1;
     font-size: 16px;
     font-weight: bold;
@@ -482,46 +487,87 @@ input[type="text"].level {
     padding: 0;
     margin: 0;
 }
+
 .items-list > .item {
-    height: 24px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    background: white;
+    flex-direction: column;
+    background: var(--section-background);
     border: 1px solid #777777;
     border-radius: 2px;
     margin: 2px 0;
 }
-.items-list > .item > a {
+.items-list > .item > .item-header {
+    flex: none;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #777777;
+}
+.items-list > .item > .item-header > a {
     flex: none;
     width: 24px;
     height: 100%;
-    background: #dddddd;
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-left: 1px solid #777777;
 }
-.items-list > .item > a > img {
+.items-list > .item > .item-header > a:has(img) {
+    background: var(--section-background);
+    border: 0;
+}
+.items-list > .item > .item-header > a > img {
     width: 100%;
     height: 100%;
     border: 0;
     object-fit: cover;
 }
-.items-list > .item > h4 {
+.items-list > .item > .item-header > .item-level {
+    flex: none;
+    width: 40px;
+    font-size: 12px;
+    padding: 0 5px;
+    border-right: 1px solid #777777;
+}
+.items-list > .item > .item-header > h4 {
     flex: 1;
+    padding: 0 5px;
     margin: 0;
 }
-.items-list > .item > div {
-    flex: none;
-    width: 50px;
-    height: 100%;
+.items-list > .item > .item-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #dddddd;
+    flex-wrap: wrap;
+    gap: 3px;
+    padding: 3px;
 }
-.items-list > .item > div > a {
-    flex: 1;
+.items-list > .item > .item-content > span {
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: black;
+    background: white;
+    padding: 0 8px;
+    border-radius: 2px;
+}
+.items-list > .item > .item-text {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+}
+.items-list > .item > .item-text > .item-effect > p {
+    font-size: 12px;
+    margin: 4px 0;
+}
+.items-list > .item > .item-text > .item-desc {
+    font-style: italic;
+    opacity: 0.75;
+}
+.items-list > .item > .item-text > .item-desc > p {
+    font-size: 12px;
+    margin: 4px 0;
 }

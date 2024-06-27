@@ -56,17 +56,65 @@ export class ArianrhodItem extends Item {
     const speaker = ChatMessage.getSpeaker({actor: this.actor});
     const rollMode = game.settings.get('core', 'rollMode');
 
-    const level = item.system.attributes?.currentSL.value;
-    const lv = level ? `<span class="arianrhod-item-level">(Lv.${level})</span>` : "";
-    const title = `<h2 class="arianrhod-item-title">${item.name + lv}</h2>`;
-    const content = `<div class="arianrhod-item-effect">${item.system.effects.value}</div><div class="arianrhod-item-description">${item.system.description.value}</div>`;
+    const title = document.createElement("div");
+    title.className = "arianrhod-item-title";
+
+    const name = document.createElement("h2");
+    name.className = "arianrhod-item-name";
+    name.innerHTML = item.name;
+    title.append(name);
+
+    const level = item.system.attributes?.currentSL?.value;
+    if (item.type === "skill" && level) {
+      const lv = document.createElement("span");
+      lv.className = "arianrhod-item-level";
+      lv.innerHTML = `Lv.${level}`;
+
+      title.append(lv);
+    }
+
+    const tagText = [];
+
+    const attrs = item.system.attributes;
+    for (const key in attrs) {
+      if (!attrs[key].value || attrs[key].isSL) continue;
+
+      const tag = document.createElement("span");
+      tag.className = "arianrhod-item-tag";
+      tag.innerHTML = `${game.i18n.localize("ARIANRHOD.Attributes." + key.capitalize())} : ${attrs[key].value}`;
+
+      tagText.push(tag);
+    }
+
+    const tags = document.createElement("div");
+    tags.className = "arianrhod-item-tags";
+    tags.append(...tagText);
+
+    const e = item.system.effects?.value;
+    const d = item.system.description?.value;
+
+    const effect = document.createElement("div");
+    effect.className = "arianrhod-item-effect";
+    effect.innerHTML = (e && e?.length > 0) ? e : "<p>효과 없음</p>";
+
+    const description = document.createElement("div");
+    description.className = "arianrhod-item-description";
+    description.innerHTML = (d && d?.length > 0) ? d : "<p>설명 없음</p>";
+
+    const text = document.createElement("div");
+    text.className = "arianrhod-item-text";
+    text.append(effect, description);
+
+    const content = document.createElement("div");
+    content.className = `arianrhod-item-card arianrhod-${item.type}-card`;
+    content.append(title, tags, text);
 
     // If there's no roll data, send a chat message.
     if (!this.system.formula) {
       ChatMessage.create({
         speaker: speaker,
         rollMode: rollMode,
-        content: title + content,
+        content: content.outerHTML
       });
     }
     // Otherwise, create a roll and send a chat message from it.

@@ -1,12 +1,10 @@
 <form class="{{cssClass}}" autocomplete="off">
+    <h2 class="headline">{{localize "ARIANRHOD.Equipment"}}</h2>
+    <div class="skill-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <input name="name" type="text" value="{{item.name}}" placeholder="Name"/>
+    </div>
     <div class="skill-abilities">
-        <header class="skill-header">
-            <h2 class="headline">{{localize "ARIANRHOD.Equipment"}}</h2>
-            <div>
-                <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
-                <input name="name" type="text" value="{{item.name}}" placeholder="Name"/>
-            </div>
-        </header>
         {{#each system.abilities as |ability key|}}
             <div class="skill-ability">
                 <label class="skill-ability-title" for="system.abilities.{{key}}.value"

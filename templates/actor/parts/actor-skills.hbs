@@ -11,23 +11,37 @@
         <ol class='items-list'>
             {{#each skills as |item id|}}
                 <li class='item flexrow' data-item-id='{{item._id}}'>
-                    <a class='rollable' data-roll-type='item'><img
-                     src='{{item.img}}'
-                     title='{{item.name}}'
-                    /></a>
-                    <h4>{{item.name}}</h4>
-                    <div class='item-controls'>
+                    <div class="item-header">
+                        <a class='rollable' data-roll-type='item'><img
+                                src='{{item.img}}'
+                                title='{{item.name}}'
+                        /></a>
+                        <span class="item-level">
+                            {{#if item.system.attributes.currentSL.value}}
+                                Lv.{{item.system.attributes.currentSL.value}}
+                            {{else}}
+                                Lv.0
+                            {{/if}}
+                        </span>
+                        <h4 class="item-title">{{item.name}}</h4>
                         <a
-                        class='item-control item-edit'
-                        title='{{localize "DOCUMENT.Edit" type='spell'}}'
+                                class='item-control item-edit'
+                                title='{{localize "DOCUMENT.Edit" type='spell'}}'
                         >
                             <i class='fas fa-edit'></i>
                         </a>
                         <a class='item-control item-delete'
-                         title='{{localize "DOCUMENT.Delete" type='spell'}}'
+                           title='{{localize "DOCUMENT.Delete" type='spell'}}'
                         >
                             <i class='fas fa-trash'></i>
                         </a>
+                    </div>
+                    <div class="item-content">
+                        {{#each item.system.attributes as |attr key|}}
+                            {{#if attr.value}}{{#unless attr.isSL}}
+                                <span class="item-attr">{{attr.label}} : {{attr.value}}</span>
+                            {{/unless}}{{/if}}
+                        {{/each}}
                     </div>
                 </li>
             {{/each}}

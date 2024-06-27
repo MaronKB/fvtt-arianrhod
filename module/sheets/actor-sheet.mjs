@@ -206,6 +206,35 @@ export class ArianrhodActorSheet extends ActorSheet {
         li.addEventListener('dragstart', handler, false);
       });
     }
+
+    html.on('click', '.item-title', (ev) => {
+      const row = ev.currentTarget.closest('li');
+      const item = this.actor.items.get(row.dataset.itemId);
+      const content = row.querySelector(".item-text");
+      if (content) content.remove();
+      else {
+        const text = document.createElement("div");
+        text.className = "item-text";
+        
+        if (item.system.effects?.value) {
+          const effects = document.createElement("div");
+          effects.className = "item-effect";
+          effects.innerHTML = item.system.effects.value;
+
+          text.append(effects);
+        }
+        
+        if (item.system.description?.value) {
+          const description = document.createElement("div");
+          description.className = "item-desc";
+          description.innerHTML = item.system.description.value;
+
+          text.append(description);
+        }
+
+        row.append(text);
+      }
+    });
   }
 
   /**

@@ -416,9 +416,11 @@
           "value": ""
         },
         "currentSL": {
+          "isSL": true,
           "value": ""
         },
         "maxSL": {
+          "isSL": true,
           "value": ""
         },
         "req": {
